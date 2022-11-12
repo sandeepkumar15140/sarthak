@@ -10,3 +10,9 @@ class Product(models.Model):
     def __str__(self):
         return self.captions
 
+
+class Users(models.Model):
+    f_name = models.CharField(max_length=50)
+    l_name = models.CharField(max_length=50)
+
+

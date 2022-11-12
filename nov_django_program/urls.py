@@ -19,9 +19,11 @@ from news import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
+                  path('admin/', admin.site.urls),
+                  path('', views.home, name='home'),
+                  path('contact/', views.contact, name='contact'),
+                  path('products/', views.products, name='products'),
+                  path('<int:product_id>/', views.product_detail, name='prod_detail'),
+                  path('about/', views.about, name='about')
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
